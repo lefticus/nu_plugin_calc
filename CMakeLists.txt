@@ -94,6 +94,7 @@ conan_add_remote(NAME
 conan_cmake_run(REQUIRES
                 jsonformoderncpp/3.7.0@vthiery/stable
                 fmt/5.3.0@bincrafters/stable
+                spdlog/1.3.1@bincrafters/stable
                 BASIC_SETUP
                 CMAKE_TARGETS
                 NO_OUTPUT_DIRS
@@ -106,12 +107,14 @@ conan_cmake_run(REQUIRES
 set(CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 find_package(jsonformoderncpp)
 find_package(fmt)
+find_package(spdlog)
 
 add_executable(nu_plugin_calc src/nu_plugin_calc.cpp)
 target_compile_features(nu_plugin_calc PRIVATE cxx_std_17)
 target_link_libraries(nu_plugin_calc
                       PRIVATE jsonformoderncpp::jsonformoderncpp
                               fmt::fmt
+                              spdlog::spdlog
                               project_warnings)
 
 enable_testing()
