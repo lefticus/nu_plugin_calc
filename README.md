@@ -31,7 +31,7 @@ c + 102
 
 All dependencies are gathered using conan.io
 
-```
+```shell
 git clone git@github.com:lefticus/nu_plugin_calc
 mkdir nu_plugin_calc-build
 cd nu_plugin_calc-build
@@ -44,7 +44,7 @@ make
 
 Make sure the binary `nu_plugin_calc` is available in your path.
 
-```
+```shell
 cat filewithexpressions | calc
 ```
 
